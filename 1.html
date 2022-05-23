@@ -60,7 +60,7 @@
       /*
       5. Выведите содержимое тега title в консоль.
        */
-      console.log(document.getElementsByTagName("title")[0].innerHTML);
+      console.log(document.title);
       /*
       6. Получите элемент с классом "card-title" и выведите его родительский узел в консоль.
        */
@@ -71,13 +71,16 @@
       7. Создайте тег `p`, запишите внутри него текст "Привет" и добавьте созданный тег в начало элемента, который имеет класс "card".
        */
       const cardEl = document.querySelector(".card");
-      cardEl.insertAdjacentHTML("afterend", "<p>Привет</p>");
+      const newP = document.createElement("p");
+      console.log(newP);
+      newP.textContent = "Привет";
+      cardEl.insertAdjacentElement("afterBegin", newP);
 
       /*
       8. Удалите тег h6 на странице.
       
        */
-      document.getElementsByTagName("h6")[0].remove();
+      document.querySelector("h6").remove();
     </script>
   </body>
 </html>

@@ -79,13 +79,10 @@
           Необходимо использовать делегирование.
           */
       const classClick = document.addEventListener("click", event => {
-        const attrEl = event.target.className;
+        const attrEl = event.target.classList.contains("super_element");
         const tagEl = event.target.tagName.toLowerCase();
-        if (attrEl !== "super_element") {
-          console.log(`Класс '${attrEl}' отсутствует в элементе '${tagEl}'`);
-        } else {
-          console.log(`Класс '${attrEl}' присутствует в элементе '${tagEl}'`);
-        }
+        const classContain = attrEl !== true ? "отсутствует" : "присутствует";
+        console.log(`Класс ${classContain} в элементе '${tagEl}'`);
       });
 
       /*
